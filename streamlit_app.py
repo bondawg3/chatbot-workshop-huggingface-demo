@@ -40,13 +40,13 @@ def load_data():
     Settings.chunk_overlap = 50
     Settings.embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5",
     embed_batch_size=20,
-    token=st.st.secrets.hftoken,
+    token=st.secrets.hftoken,
     )
 
     
     Settings.llm = HuggingFaceInferenceAPI(
     model_name="deepseek-ai/DeepSeek-R1-0528",
-    token=secrets.hftoken,
+    token=st.secrets.hftoken,
     provider="auto",  # this will use the best provider available
     system_prompt="""You are an expert on the work of Rabindrath Tagore.
     Answer the question using the provided documents, which contain relevant excerpts from the work of Rabindrath Tagore.
